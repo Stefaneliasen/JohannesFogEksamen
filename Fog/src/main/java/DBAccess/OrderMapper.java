@@ -42,7 +42,7 @@ public class OrderMapper {
                     throw new CarportException("Creating order failed, no ID obtained.");
                 }
             } catch (ClassNotFoundException | SQLException ex) {
-                throw new CarportException(ex.getMessage());
+                throw new CarportException("addorder" + ex.getMessage());
             }
         }
         return order.getId();
@@ -51,19 +51,20 @@ public class OrderMapper {
     public void addOdetails(Order order) throws ClassNotFoundException, SQLException, CarportException {
         Connection con = Connector.connection();
         PreparedStatement order1 = null;
-        String SQLString = "insert into billofmaterials (orders_orderId, material_id, quantity) values (?,?,?)";
+        String SQLString = "insert into billofmaterials (orders_orderId, material_id, quantity, length) values (?,?,?,?)";
         try {
             order1 = con.prepareStatement(SQLString);
             order1.setInt(1, order.getId());
             for (int i = 0; i < order.getMaterials().size(); i++) {
+                System.out.println("Material id " + order.getMaterials().get(i).getId());
                 order1.setInt(2, order.getMaterials().get(i).getId());
                 order1.setInt(3, order.getMaterials().get(i).getAmount());
-
+                order1.setInt(4, order.getMaterials().get(i).getLength());
                 order1.executeUpdate();
             }
 
         } catch (SQLException ex) {
-            throw new CarportException(ex.getMessage());
+            throw new CarportException("addodetails: " + ex.getMessage());
         }
     }
 
