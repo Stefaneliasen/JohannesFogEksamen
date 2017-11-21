@@ -28,13 +28,13 @@ public class CarportCalculator {
 
     public Material stk1(int length, int width, int height) throws CarportException {
         // "25x200 mm. trykimp. Brædt"
-        int l = width + 5;
+        int length1 = width + 5;
         String pname = pm.getMaterialById(1).getPname();
         int price = pm.getMaterialById(1).getPrice();
         Material mat = new Material(pname, price);
-        mat.setId(l);
+        mat.setId(1);
         mat.setAmount(4);
-        mat.setLength(l);
+        mat.setLength(length1);
         return mat;
     }
 
