@@ -35,6 +35,6 @@ public class Calculation extends Command {
         session.setAttribute("length", length);
         session.setAttribute("width", width);
         session.setAttribute("height", height);
-        return "calculation";
+        return "billOfMaterial";
     }
 }
