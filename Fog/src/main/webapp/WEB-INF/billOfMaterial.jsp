@@ -15,11 +15,11 @@
         <input type="hidden" name="command" value="myOrders">
         <table class="table table-striped">
             <tr>
-                <th> MaterialId  | </th>
+                <th> | MaterialId  | </th>
                 <th> Materialname | </th>
                 <th> Quantity | </th>
                 <th> Length | </th>
-                <th> Price for one piece | </th>
+                <th> Price per item | </th>
                 
             </tr>
             <% Order order = (Order) session.getAttribute("order");
