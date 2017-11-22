@@ -307,7 +307,6 @@ public class CarportCalculator {
         treeAndRoofTiles.add(stk17(length, width, height));
         treeAndRoofTiles.add(stk18(length, width, height));
         treeAndRoofTiles.add(stk19(length, width, height));
-
         return treeAndRoofTiles;
     }
 
