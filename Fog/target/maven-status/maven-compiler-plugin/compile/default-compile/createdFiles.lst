@@ -1,4 +1,6 @@
+PresentationLayer\SVGPage.class
 PresentationLayer\UnknownCommand.class
+PresentationLayer\SVGUtil.class
 entity\Material.class
 FunctionLayer\CarportException.class
 PresentationLayer\Calculation.class

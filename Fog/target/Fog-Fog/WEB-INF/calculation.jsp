@@ -13,6 +13,10 @@
     </head>
     <body>
         <form name="calculation" action="FrontController" method="POST">
+            <input type="hidden" name="command" value="visual">
+            <input type="submit" value="Submit">
+        </form>
+        <form name="calculation" action="FrontController" method="POST">
             <input type="hidden" name="command" value="calculation">
             Length:
             <br>
