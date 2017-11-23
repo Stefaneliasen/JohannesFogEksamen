@@ -27,7 +27,7 @@ public class CarportCalculator {
     }
 
     public Material stk1(int length, int width, int height) throws CarportException {
-          // "25x200 mm. trykimp. Brædt"
+        // "25x200 mm. trykimp. Brædt"
         // +5 da sternbrædderne rækker 2,5cm udover spærrene hver side
         int stk1width = width + 5;
         String pname = pm.getMaterialById(1).getPname();
@@ -108,12 +108,11 @@ public class CarportCalculator {
         int l = height + 90;
         mat.setId(6);
         mat.setLength(l);
-        if (length <= 460) {
+        int amount = (int) Math.ceil((length-130) / 310) * 2;
+        if (length < 430) {
             mat.setAmount(4);
-        } else if (length > 460 || length <= 780) {
-            mat.setAmount(6);
-        } else if (length > 780 || length < 1300) {
-            mat.setAmount(8);
+        } else {
+            mat.setAmount(4+amount);
         }
         return mat;
     }
