@@ -8,8 +8,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    int length = 720; // get this from a request attribute
-    int width = 320; // get this from a request attribute
+    int length = 600; // get this from a request attribute
+    int width = 300; // get this from a request attribute
     int height = 200; // ditto
 %>
 <html>
