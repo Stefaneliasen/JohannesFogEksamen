@@ -19,13 +19,14 @@ public class LogicFacade {
         CarportCalculator Calc = new CarportCalculator();
         return Calc.flatRoofMaterial(length, width, height);
     }
-   public static User login( String email, String password ) throws CarportException {
-        return UserMapper.login( email, password );
-    } 
 
-    public static User createUser( String email, String password ) throws CarportException {
+    public static User login(String email, String password) throws CarportException {
+        return UserMapper.login(email, password);
+    }
+
+    public static User createUser(String email, String password) throws CarportException {
         User user = new User(email, password, "customer");
-        UserMapper.createUser( user );
+        UserMapper.createUser(user);
         return user;
     }
 
@@ -33,5 +34,17 @@ public class LogicFacade {
         OrderMapper om = new OrderMapper();
         return om.addOrder(order);
     }
-    
+
+    public static ArrayList<User> getUsers() throws CarportException {
+        return UserMapper.getUser();
+    }
+
+    public static ArrayList<Order> viewOrders(int userid) throws CarportException {
+        OrderMapper om = new OrderMapper();
+        return om.viewOrder(userid);
+    }
+    public static ArrayList<Order> viewOdetails(int id) throws CarportException {
+        OrderMapper om = new OrderMapper();
+        return om.viewOdetails(id);
+    }
 }

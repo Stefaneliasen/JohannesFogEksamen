@@ -3,6 +3,7 @@ package DBAccess;
 import FunctionLayer.CarportException;
 import entity.Material;
 import entity.Order;
+import entity.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 public class OrderMapper {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException, CarportException {
-   OrderMapper om = new OrderMapper();
+        OrderMapper om = new OrderMapper();
         Material material = new Material("hej", 1);
         ArrayList<Material> materials = new ArrayList();
         materials.add(material);
@@ -68,4 +69,50 @@ public class OrderMapper {
         }
     }
 
+    public ArrayList<Order> viewOrder(int id) throws CarportException {
+        ResultSet rs = null;
+        PreparedStatement stmt = null;
+        String SQLString
+                = "Select * from orders where user_userId = ?";
+        
+        Order order = null;
+        ArrayList<Order> orders = new ArrayList();
+        
+        try {
+            Connection con = Connector.connection();
+            stmt = con.prepareStatement(SQLString);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                order = new Order(rs.getInt("orderid"), rs.getInt("user_userId"));
+                orders.add(order);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new CarportException(ex.getMessage());
+        }
+        return orders;
+    }
+    public ArrayList<Order> viewOdetails(int id) throws CarportException {
+        ResultSet rs = null;
+        PreparedStatement stmt = null;
+        String SQLString
+                = "Select orders_orderId, pname, length, quantity, price from billofmaterials natural join material where orders_orderId = ?";
+        
+        Order order = null;
+        ArrayList<Order> orders = new ArrayList();
+        try {
+            Connection con = Connector.connection();
+            stmt = con.prepareStatement(SQLString);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            while (rs.next()) { 
+                order = new Order(rs.getInt("orders_orderId"), rs.getString("pname"), rs.getInt("length"), rs.getInt("quantity"), rs.getInt("price"));
+                orders.add(order);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new CarportException(ex.getMessage());
+        }
+        return orders;
+    }
+    
 }

@@ -92,7 +92,8 @@ public class CarportCalculator {
         String pname = pm.getMaterialById(5).getPname();
         int price = pm.getMaterialById(5).getPrice();
         Material mat = new Material(pname, price);
-        int amount = (int) Math.ceil(length / 55);
+        //1 spær placeres i starten, og derfor ikke regnet med i divisionstykket. Derfor +1
+        int amount = (int) Math.round(length / 55)+1;
         mat.setId(5);
         mat.setAmount(amount);
         mat.setLength(width);

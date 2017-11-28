@@ -6,18 +6,16 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Carport Measurement</title>
     </head>
     <body>
+
         <form name="calculation" action="FrontController" method="POST">
             <input type="hidden" name="command" value="visual">
-            <input type="submit" value="Submit">
-        </form>
-        <form name="calculation" action="FrontController" method="POST">
-            <input type="hidden" name="command" value="calculation">
             Length:
             <br>
             <input type="text" name="length">
@@ -30,7 +28,12 @@
             <br>
             <input type="text" name="height">
             <br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Gå til tegning">
         </form>
-    </body>
-</html>
+        <form name="calculation" action="FrontController" method="POST">
+            <input type="hidden" name="command" value="userlist">
+            <input type="submit" value="Gå til brugerliste">
+        </form>
+
+            </body>
+            </html>

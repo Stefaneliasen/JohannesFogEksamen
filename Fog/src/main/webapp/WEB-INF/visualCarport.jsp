@@ -8,24 +8,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    int length = 600; // get this from a request attribute
-    int width = 300; // get this from a request attribute
-    int height = 200; // ditto
+    int width = (int) request.getSession().getAttribute("width");
+    int length = (int) request.getSession().getAttribute("length");
+    int height = (int) request.getSession().getAttribute("height");
 %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Se din carport</title>
     </head>
-     <svg width="75%" viewBox="0 0 <%=length*2+1%> <%=width*2+1%>">
-
-        <!-- Benyt samme princip som tidligere til RenderUtils - her er det blot SVG vi genererer -->
+    <body>
+        <svg width="75%" viewBox="0 0 <%=length * 2 + 1%> <%=width * 2 + 1%>">
         <%= SVGUtil.svgCarport(length, width, height)%>
         </svg>
-   
-        
-        
-    <body>
-        <h1>Hello World!</h1>
+        <form name="calculation" action="FrontController" method="POST">
+            <input type="hidden" name="command" value="calculation">
+            <input type="submit" value="Gå til stykliste">
+        </form>
     </body>
 </html>

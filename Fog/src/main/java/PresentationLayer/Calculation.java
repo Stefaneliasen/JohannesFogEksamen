@@ -15,10 +15,10 @@ public class Calculation extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CarportException {
-        int length = Integer.parseInt(request.getParameter("length"));
-        int width = Integer.parseInt(request.getParameter("width"));
-        int height = Integer.parseInt(request.getParameter("height"));
-        
+      
+        int length = (int) request.getSession().getAttribute("length");
+        int width = (int) request.getSession().getAttribute("width");
+        int height = (int) request.getSession().getAttribute("height");
         ArrayList<Material> materialList = LogicFacade.createMaterialList(length, width, height);
         HttpSession session = request.getSession();
 
@@ -32,9 +32,7 @@ public class Calculation extends Command {
         } catch (ClassNotFoundException ex) {
             ex.getStackTrace();
         }
-        session.setAttribute("length", length);
-        session.setAttribute("width", width);
-        session.setAttribute("height", height);
+       
         return "billOfMaterial";
     }
 }

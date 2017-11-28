@@ -6,16 +6,21 @@ package entity;
  */
 public class User {
 
+    private int id; // just used to demo retrieval of autogen keys in UserMapper
+    private String email;
+    private String password; // Should be hashed and all
+    private String role;
+   
     public User( String email, String password, String role ) {
         this.email = email;
         this.password = password;
         this.role = role;
     }
+    public User( String email, int id) {
+        this.id = id;
+        this.email = email;
+    }
 
-    private int id; // just used to demo retrieval of autogen keys in UserMapper
-    private String email;
-    private String password; // Should be hashed and all
-    private String role;
 
     public String getEmail() {
         return email;
