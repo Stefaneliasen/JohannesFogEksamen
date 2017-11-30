@@ -2,7 +2,6 @@ package PresentationLayer;
 
 import FunctionLayer.LogicFacade;
 import FunctionLayer.CarportException;
-import entity.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,11 +15,14 @@ public class SVGPage extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CarportException {
+        HttpSession session = request.getSession();
         int length = Integer.parseInt(request.getParameter("length"));
         int width = Integer.parseInt(request.getParameter("width"));
         int height = Integer.parseInt(request.getParameter("height"));
-
-        HttpSession session = request.getSession();
+        if(!request.getParameter("sLength").equals("")){
+        int sLength = Integer.parseInt(request.getParameter("sLength"));
+        session.setAttribute("sLength", sLength);
+        }
 
         session.setAttribute("length", length);
         session.setAttribute("width", width);

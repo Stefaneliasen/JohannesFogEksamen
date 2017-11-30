@@ -19,4 +19,5 @@ FunctionLayer\LogicFacade.class
 PresentationLayer\Command.class
 PresentationLayer\UserList.class
 DBAccess\UserMapper.class
+FunctionLayer\ShedCalculator.class
 PresentationLayer\Login.class

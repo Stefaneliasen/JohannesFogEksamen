@@ -19,6 +19,10 @@ public class LogicFacade {
         CarportCalculator Calc = new CarportCalculator();
         return Calc.flatRoofMaterial(length, width, height);
     }
+    public static ArrayList<Material> shedMaterialList(int sLength, int width, int height) throws CarportException {
+        ShedCalculator shed = new ShedCalculator();
+        return shed.shedMaterial(sLength, width, height);
+    }
 
     public static User login(String email, String password) throws CarportException {
         return UserMapper.login(email, password);
