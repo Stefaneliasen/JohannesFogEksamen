@@ -48,7 +48,7 @@ public class SVGUtil {
             double amount2 = Math.ceil((length-139.5-sLength)/310);
             double xPos2 = ((length-139.5-sLength)/amount);
             int currentPos2 = 100;
-            for (int i = 0; i < amount2; i++) {
+            for (int i = 1; i < amount2; i++) {
                 res += "<rect x=\"" + (currentPos2 + xPos2) + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
                 res2 += "<rect x=\"" + (currentPos2 + xPos2) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
                 xPos2 += xPos2;

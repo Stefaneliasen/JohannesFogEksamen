@@ -23,11 +23,12 @@ public class Calculation extends Command {
         int length = (int) session.getAttribute("length");
         int width = (int) session.getAttribute("width");
         int height = (int) session.getAttribute("height");
+        int sLength = 0;
         double totalPrice = 0;
         // tjek om sLength er null eller ej.
         PriceCalculator priceCalc = new PriceCalculator();
         if (session.getAttribute("sLength") != null) {
-            int sLength = (int) session.getAttribute("sLength");
+            sLength = (int) session.getAttribute("sLength");
             ArrayList<Material> shedList = LogicFacade.shedMaterialList(sLength, width, height);
             Order orderSkur = new Order(user.getId(), shedList);
             session.setAttribute("orderSkur", orderSkur);
@@ -38,7 +39,7 @@ public class Calculation extends Command {
                 ex.getStackTrace();
             }
         }
-        ArrayList<Material> materialList = LogicFacade.createMaterialList(length, width, height);
+        ArrayList<Material> materialList = LogicFacade.createMaterialList(length, width, height, sLength);
         Order order = new Order(user.getId(), materialList);
         session.setAttribute("order", order);
         totalPrice += priceCalc.totalOrderPrice(materialList);

@@ -15,9 +15,9 @@ import java.util.ArrayList;
  */
 public class LogicFacade {
 
-    public static ArrayList<Material> createMaterialList(int length, int width, int height) throws CarportException {
+    public static ArrayList<Material> createMaterialList(int length, int width, int height, int sLength) throws CarportException {
         CarportCalculator Calc = new CarportCalculator();
-        return Calc.flatRoofMaterial(length, width, height);
+        return Calc.flatRoofMaterial(length, width, height, sLength);
     }
     public static ArrayList<Material> shedMaterialList(int sLength, int width, int height) throws CarportException {
         ShedCalculator shed = new ShedCalculator();
