@@ -21,22 +21,18 @@ public class SVGUtil {
     }
 
     public static String svgStolper(int length, int width, int height, int sLength) {
-        String sRes1 = "";
-        String sRes2 = "";
-        String sRes3 = "";
-        String sRes4 = "";
         String res = "<rect x=\"100\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />"
                 + "<rect x=\"" + (length - 30) + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
         String res2 = "<rect x=\"100\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />"
                 + "<rect x=\"" + (length - 30) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
         if (sLength > 0) {
             //14.5 er stolpens længde plus udhænget på hver side
-            sRes1 = "<rect x=\"" + (length - 30) + "\" y=\"" + ((width / 2) + 14.5) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-            sRes2 = "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + ((width / 2) + 14.5) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-            sRes3 = "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + 27.5 + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-            sRes4 = "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+            res += "<rect x=\"" + (length - 30) + "\" y=\"" + ((width / 2) + 14.5) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+            res += "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + ((width / 2) + 14.5) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+            res += "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + 27.5 + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+            res += "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
             // poles to support shed if needed
-            double amount = sLength/310;
+            double amount = Math.ceil((double) sLength/310);
             System.out.println("sLength " + sLength);
             System.out.println("amount " + amount);
             double xPos = sLength / amount;
@@ -70,7 +66,7 @@ public class SVGUtil {
                 }
             }
         }
-        return res + res2 + sRes1 + sRes2 + sRes3 + sRes4;
+        return res + res2;
     }
 
     public static String svgKryds(int length, int width, int height, int sLength) {
@@ -99,9 +95,10 @@ public class SVGUtil {
     }
 
     public static String svgSkur(int length, int width, int height, int sLength) {
-        String skur = "<rect x=\"" + ((length - 30) - sLength) + "\" y=\"30\" height=\"" + (width - 25) + "\" width=\"" + (sLength + 9.5) + "\" style=\"stroke:rgb(255,255,255);fill:none;stroke-width:2;stroke:rgb(0,0,0);stroke-dasharray: 10 5;\" />";
-//       String skur = "rect x=\""+ ((length-30)-sLength) + "\" y=\"27.5\" height=\""+(width-3)+"\" width=\""+ sLength+"\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" /> ";
-
+       String skur = "";
+        if(sLength > 0){
+        skur = "<rect x=\"" + ((length - 30) - sLength) + "\" y=\"30\" height=\"" + (width - 25) + "\" width=\"" + (sLength + 9.5) + "\" style=\"stroke:rgb(255,255,255);fill:none;stroke-width:2;stroke:rgb(0,0,0);stroke-dasharray: 10 5;\" />";
+       }
         return skur;
     }
 
