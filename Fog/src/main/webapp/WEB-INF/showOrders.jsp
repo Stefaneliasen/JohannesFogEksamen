@@ -15,11 +15,11 @@
     <body>
         <table class="table table-striped">
             <tr>
-                <th> | Order Id| </th>
-                <th> Material name | </th>
-                <th> Quantity | </th>
-                <th> Length | </th>
-                <th> Price per item | </th>
+                <th> Order id</th>
+                <th> Material name</th>
+                <th> Quantity </th>
+                <th> Length </th>
+                <th> Price per item </th>
 
             </tr>
             <% ArrayList<Order> odetails = (ArrayList<Order>) session.getAttribute("odetails");

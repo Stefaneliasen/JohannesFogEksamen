@@ -11,7 +11,12 @@
     int width = (int) request.getSession().getAttribute("width");
     int length = (int) request.getSession().getAttribute("length");
     int height = (int) request.getSession().getAttribute("height");
-    int sLength = (int) request.getSession().getAttribute("sLength");
+    int sLength;
+    if (request.getSession().getAttribute("sLength") != null) {
+        sLength = (int) request.getSession().getAttribute("sLength");
+    } else {
+        sLength = 0;
+    }
 %>
 <html>
     <head>
