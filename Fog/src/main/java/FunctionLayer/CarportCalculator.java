@@ -22,12 +22,12 @@ public class CarportCalculator {
         int length = 0;
         int width = 0;
         int height = 0;
-        cvasga.stk2(length, width, height);
-        cvasga.stk1(length, width, height);
+        cvasga.brædderSiderne(length, width, height);
+        cvasga.brædderForOgBag(length, width, height);
     }
 
-    public Material stk1(int length, int width, int height) throws CarportException {
-        // "25x200 mm. trykimp. Brædt"
+    public Material brædderForOgBag(int length, int width, int height) throws CarportException {
+        // Understernbrædder til for & bag ende
         // +5 da sternbrædderne rækker 2,5cm udover spærrene hver side
         int stk1width = width + 5;
         String pname = pm.getMaterialById(1).getPname();
@@ -39,8 +39,8 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk2(int length, int width, int height) throws CarportException {
-        // "25x200 mm. trykimp. Brædt"
+    public Material brædderSiderne(int length, int width, int height) throws CarportException {
+        //Understernbrædder til siderne.
         String pname = pm.getMaterialById(1).getPname();
         int price = pm.getMaterialById(1).getPrice();
         Material mat = new Material(pname, price);
@@ -50,8 +50,8 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk3(int length, int width, int height) throws CarportException {
-        // "25x125mm. trykimp. Brædt"
+    public Material oversternBrædderForenden(int length, int width, int height) throws CarportException {
+        //Oversternbrædder til forenden
         //
         // TJEK LIGE GAMMELT PROJEKT om l er rigtig
         String pname = pm.getMaterialById(2).getPname();
@@ -64,8 +64,8 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk4(int length, int width, int height) throws CarportException {
-        // "25x125mm. trykimp. Brædt"
+    public Material oversternBrædderSiderne(int length, int width, int height) throws CarportException {
+        // oversternbrædder til siderne
         String pname = pm.getMaterialById(2).getPname();
         int price = pm.getMaterialById(2).getPrice();
         Material mat = new Material(pname, price);
@@ -75,8 +75,8 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk5(int length, int width, int height) throws CarportException {
-        // 45x195 mm. spærtræ ubh.
+    public Material remISider(int length, int width, int height) throws CarportException {
+        // Remme i sider, sadles ned i stolper
         // der bruges 1 rem til hver ende af carporten.
         String pname = pm.getMaterialById(5).getPname();
         int price = pm.getMaterialById(5).getPrice();
@@ -87,8 +87,8 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk6(int length, int width, int height) throws CarportException {
-        // "45x195 mm. spærtræ ubh."
+    public Material spaer(int length, int width, int height) throws CarportException {
+        // "Spær, monteres på rem"
         String pname = pm.getMaterialById(5).getPname();
         int price = pm.getMaterialById(5).getPrice();
         Material mat = new Material(pname, price);
@@ -100,7 +100,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk7(int length, int width, int height) throws CarportException {
+    public Material stolper(int length, int width, int height) throws CarportException {
         // "97x97 mm. trykimp. Stolpe"
         // stolperne graves 90cm ned i jorden, så de skal være 90cm længere end højden
         String pname = pm.getMaterialById(6).getPname();
@@ -117,9 +117,8 @@ public class CarportCalculator {
         }
         return mat;
     }
-
-    public Material stk8(int length, int width, int height) throws CarportException {
-        //"19x100 mm. trykimp. Brædt"
+    public Material vandbrætSide(int length, int width, int height) throws CarportException {
+        //"vandbrædt på stern i sider"
         String pname = pm.getMaterialById(7).getPname();
         int price = pm.getMaterialById(7).getPrice();
         Material mat = new Material(pname, price);
@@ -129,8 +128,8 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk9(int length, int width, int height) throws CarportException {
-        // "19x100 mm. trykimp. Brædt"
+    public Material vandbrætFor(int length, int width, int height) throws CarportException {
+        // "vandbrædt på stern i forende"
         String pname = pm.getMaterialById(7).getPname();
         int price = pm.getMaterialById(7).getPrice();
         Material mat = new Material(pname, price);
@@ -140,7 +139,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk10(int length, int width, int height) throws CarportException {
+    public Material tagPladeStor(int length, int width, int height) throws CarportException {
         // "Plastmo Ecolite blåtonet"
         String pname = pm.getMaterialById(8).getPname();
         int price = pm.getMaterialById(8).getPrice();
@@ -157,7 +156,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk11(int length, int width, int height) throws CarportException {
+    public Material tagPladeLille(int length, int width, int height) throws CarportException {
         // "Plastmo Ecolite blåtonet"
         String pname = pm.getMaterialById(8).getPname();
         int price = pm.getMaterialById(8).getPrice();
@@ -175,7 +174,7 @@ public class CarportCalculator {
     }
     //Screws
 
-    public Material stk12(int length, int width, int height) throws CarportException {
+    public Material tagPladeSkruer(int length, int width, int height) throws CarportException {
         // "plastmo bundskruer 200 stk."
         String pname = pm.getMaterialById(9).getPname();
         int price = pm.getMaterialById(9).getPrice();
@@ -193,7 +192,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk13(int length, int width, int height) throws CarportException {
+    public Material hulbaand(int length, int width, int height) throws CarportException {
         // "hulbånd 1x20 mm. 10 mtr."
         String pname = pm.getMaterialById(10).getPname();
         int price = pm.getMaterialById(10).getPrice();
@@ -207,7 +206,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk14(int length, int width, int height) throws CarportException {
+    public Material universalBeslagHøjre(int length, int width, int height) throws CarportException {
         // "universal 190 mm højre"
         String pname = pm.getMaterialById(11).getPname();
         int price = pm.getMaterialById(11).getPrice();
@@ -218,7 +217,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk15(int length, int width, int height) throws CarportException {
+    public Material universalBeslagVenstre(int length, int width, int height) throws CarportException {
         // "universal 190 mm højre"
         String pname = pm.getMaterialById(11).getPname();
         int price = pm.getMaterialById(11).getPrice();
@@ -229,7 +228,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk16(int length, int width, int height) throws CarportException {
+    public Material skruerSternOgVandbræt(int length, int width, int height) throws CarportException {
         // "4,5 x 60 mm. skruer 200 stk."
         // Ca. 10 skruer pr. meter. 
         String pname = pm.getMaterialById(12).getPname();
@@ -248,7 +247,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk17(int length, int width, int height) throws CarportException {
+    public Material universalOgHulbaandSkruer(int length, int width, int height) throws CarportException {
         // "4,0 x 50 mm. beslagskruer 250 stk."
         String pname = pm.getMaterialById(13).getPname();
         int price = pm.getMaterialById(13).getPrice();
@@ -265,49 +264,49 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material stk18(int length, int width, int height) throws CarportException {
+    public Material bræddebolt(int length, int width, int height) throws CarportException {
         // "bræddebolt 10 x 120 mm."
         String pname = pm.getMaterialById(14).getPname();
         int price = pm.getMaterialById(14).getPrice();
         Material mat = new Material(pname, price);
         mat.setId(14);
-        int amount = stk7(length, width, height).getAmount() * 2;
+        int amount = stolper(length, width, height).getAmount() * 2;
         mat.setAmount(amount);
         return mat;
     }
 
-    public Material stk19(int length, int width, int height) throws CarportException {
+    public Material firkantskiver(int length, int width, int height) throws CarportException {
         // "firkantskiver 40x40x11mm"
         String pname = pm.getMaterialById(15).getPname();
         int price = pm.getMaterialById(15).getPrice();
         Material mat = new Material(pname, price);
         mat.setId(15);
-        int amount = stk7(length, width, height).getAmount() * 2;
+        int amount = stolper(length, width, height).getAmount() * 2;
         mat.setAmount(amount);
         return mat;
     }
 
     public ArrayList<Material> flatRoofMaterial(int length, int width, int height) throws CarportException {
         ArrayList<Material> treeAndRoofTiles = new ArrayList();
-        treeAndRoofTiles.add(stk1(length, width, height));
-        treeAndRoofTiles.add(stk2(length, width, height));
-        treeAndRoofTiles.add(stk3(length, width, height));
-        treeAndRoofTiles.add(stk4(length, width, height));
-        treeAndRoofTiles.add(stk5(length, width, height));
-        treeAndRoofTiles.add(stk6(length, width, height));
-        treeAndRoofTiles.add(stk7(length, width, height));
-        treeAndRoofTiles.add(stk8(length, width, height));
-        treeAndRoofTiles.add(stk9(length, width, height));
-        treeAndRoofTiles.add(stk10(length, width, height));
-        treeAndRoofTiles.add(stk11(length, width, height));
-        treeAndRoofTiles.add(stk12(length, width, height));
-        treeAndRoofTiles.add(stk13(length, width, height));
-        treeAndRoofTiles.add(stk14(length, width, height));
-        treeAndRoofTiles.add(stk15(length, width, height));
-        treeAndRoofTiles.add(stk16(length, width, height));
-        treeAndRoofTiles.add(stk17(length, width, height));
-        treeAndRoofTiles.add(stk18(length, width, height));
-        treeAndRoofTiles.add(stk19(length, width, height));
+        treeAndRoofTiles.add(brædderForOgBag(length, width, height));
+        treeAndRoofTiles.add(brædderSiderne(length, width, height));
+        treeAndRoofTiles.add(oversternBrædderForenden(length, width, height));
+        treeAndRoofTiles.add(oversternBrædderSiderne(length, width, height));
+        treeAndRoofTiles.add(remISider(length, width, height));
+        treeAndRoofTiles.add(spaer(length, width, height));
+        treeAndRoofTiles.add(stolper(length, width, height));
+        treeAndRoofTiles.add(vandbrætSide(length, width, height));
+        treeAndRoofTiles.add(vandbrætFor(length, width, height));
+        treeAndRoofTiles.add(tagPladeStor(length, width, height));
+        treeAndRoofTiles.add(tagPladeLille(length, width, height));
+        treeAndRoofTiles.add(tagPladeSkruer(length, width, height));
+        treeAndRoofTiles.add(hulbaand(length, width, height));
+        treeAndRoofTiles.add(universalBeslagHøjre(length, width, height));
+        treeAndRoofTiles.add(universalBeslagVenstre(length, width, height));
+        treeAndRoofTiles.add(skruerSternOgVandbræt(length, width, height));
+        treeAndRoofTiles.add(universalOgHulbaandSkruer(length, width, height));
+        treeAndRoofTiles.add(bræddebolt(length, width, height));
+        treeAndRoofTiles.add(firkantskiver(length, width, height));
         return treeAndRoofTiles;
     }
 

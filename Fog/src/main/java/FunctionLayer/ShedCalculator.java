@@ -39,7 +39,7 @@ public class ShedCalculator {
         int price = pm.getMaterialById(4).getPrice();
         Material mat = new Material(pname, price);
         mat.setId(4);
-        //hvorfor skal der bruges 12??
+        //
         mat.setAmount(12);
         mat.setLength(stk1width);
         return mat;
@@ -51,7 +51,7 @@ public class ShedCalculator {
         int price = pm.getMaterialById(4).getPrice();
         Material mat = new Material(pname, price);
         mat.setId(4);
-        //hvorfor skal der bruges 4??
+        //bankes direkte i rem
         mat.setAmount(4);
         mat.setLength(sLength);
         return mat;
@@ -75,7 +75,7 @@ public class ShedCalculator {
         Material mat = new Material(pname, price);
         mat.setId(7);
         //Length og width divideres med 10, da brædderne er 10 cm i bredde.
-        int amount = (sLength / 10 * 2) + (width / 10 * 2); 
+        int amount = (int) Math.ceil(((sLength / 5) * 2) + ((width / 5) * 2)); 
         mat.setAmount(amount);
         mat.setLength(height);
         return mat;
@@ -87,7 +87,7 @@ public class ShedCalculator {
         Material mat = new Material(pname, price);
         mat.setId(16);
         //Antallet af brædder til ydre beklædning * med 4, fordi der bruges 4 skruer pr. bræt
-        int amount = brætTilSkur(sLength, width, height).getAmount() * 4;
+        int amount = (int) Math.ceil((brætTilSkur(sLength, width, height).getAmount() * 4)/400);
         mat.setAmount(amount);
         return mat;
 }
@@ -98,7 +98,7 @@ public class ShedCalculator {
         Material mat = new Material(pname, price);
         mat.setId(17);
         //Antallet af brædder til inder beklædning * med 3, fordi der bruges 3 skruer pr. bræt
-        int amount = brætTilSkur(sLength, width, height).getAmount() * 3;
+        int amount = (int) Math.ceil((brætTilSkur(sLength, width, height).getAmount() * 3)/300);
         mat.setAmount(amount);
         return mat;
 }

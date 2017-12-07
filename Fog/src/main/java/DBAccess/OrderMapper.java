@@ -96,7 +96,7 @@ public class OrderMapper {
         ResultSet rs = null;
         PreparedStatement stmt = null;
         String SQLString
-                = "Select orders_orderId, pname, length, quantity, price from billofmaterials natural join material where orders_orderId = ?";
+                = "Select * from material m, billofmaterials b where b.orders_orderId = ? AND b.material_id = m.id";
         
         Order order = null;
         ArrayList<Order> orders = new ArrayList();

@@ -55,6 +55,7 @@ public class UserMapper {
                 return user;
             } else {
                 throw new CarportException("Could not validate user");
+                //Simpel logger på userlogin
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new CarportException(ex.getMessage());

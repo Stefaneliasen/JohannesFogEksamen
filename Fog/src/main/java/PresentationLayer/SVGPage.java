@@ -19,11 +19,10 @@ public class SVGPage extends Command {
         int length = Integer.parseInt(request.getParameter("length"));
         int width = Integer.parseInt(request.getParameter("width"));
         int height = Integer.parseInt(request.getParameter("height"));
-        if(!request.getParameter("sLength").equals("")){
+        // Check om sLength er null før vi parser
         int sLength = Integer.parseInt(request.getParameter("sLength"));
+        
         session.setAttribute("sLength", sLength);
-        }
-
         session.setAttribute("length", length);
         session.setAttribute("width", width);
         session.setAttribute("height", height);

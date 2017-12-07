@@ -11,6 +11,7 @@
     int width = (int) request.getSession().getAttribute("width");
     int length = (int) request.getSession().getAttribute("length");
     int height = (int) request.getSession().getAttribute("height");
+    int sLength = (int) request.getSession().getAttribute("sLength");
 %>
 <html>
     <head>
@@ -19,7 +20,8 @@
     </head>
     <body>
         <svg width="75%" viewBox="0 0 <%=length * 2 + 1%> <%=width * 2 + 1%>">
-        <%= SVGUtil.svgCarport(length, width, height)%>
+        <%= SVGUtil.svgCarport(length, width, height, sLength)%>
+        
         </svg>
         <form name="calculation" action="FrontController" method="POST">
             <input type="hidden" name="command" value="calculation">

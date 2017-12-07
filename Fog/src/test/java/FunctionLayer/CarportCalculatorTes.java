@@ -63,7 +63,7 @@ public class CarportCalculatorTes {
         int height = 0;
         CarportCalculator instance = new CarportCalculator();
         Material expResult = null;
-        Material result = instance.stk1(length, width, height);
+        Material result = instance.brædderForOgBag(length, width, height);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -80,7 +80,7 @@ public class CarportCalculatorTes {
         int height = 0;
         CarportCalculator instance = new CarportCalculator();
         Material expResult = null;
-        Material result = instance.stk2(length, width, height);
+        Material result = instance.brædderSiderne(length, width, height);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -97,7 +97,7 @@ public class CarportCalculatorTes {
         int height = 0;
         CarportCalculator instance = new CarportCalculator();
         Material expResult = null;
-        Material result = instance.stk3(length, width, height);
+        Material result = instance.oversternBrædderForenden(length, width, height);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -114,7 +114,7 @@ public class CarportCalculatorTes {
         int height = 0;
         CarportCalculator instance = new CarportCalculator();
         Material expResult = null;
-        Material result = instance.stk4(length, width, height);
+        Material result = instance.oversternBrædderSiderne(length, width, height);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -131,7 +131,7 @@ public class CarportCalculatorTes {
         int height = 200;
         CarportCalculator instance = new CarportCalculator();
         Material expResult = null;
-        Material result = instance.stk5(length, width, height);
+        Material result = instance.remISider(length, width, height);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -148,7 +148,7 @@ public class CarportCalculatorTes {
         int height = 200;
         CarportCalculator instance = new CarportCalculator();
         int expResult = 11;
-        int result = instance.stk6(length, width, height).getAmount();
+        int result = instance.spaer(length, width, height).getAmount();
         assertEquals(expResult, result);
        
     }
@@ -161,7 +161,7 @@ public class CarportCalculatorTes {
         int height = 200;
         CarportCalculator instance = new CarportCalculator();
         Material expResult = new Material(pm.getMaterialById(5).getPname(), pm.getMaterialById(5).getPrice());
-        Material result = instance.stk6(length, width, height);
+        Material result = instance.spaer(length, width, height);
         assertEquals(expResult, result);
         expResult.equals(result);
        
