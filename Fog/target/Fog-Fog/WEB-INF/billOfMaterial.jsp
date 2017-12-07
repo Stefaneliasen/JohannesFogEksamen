@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bill of Materials</title>
-        <form action="FrontController" method="POST">
+    <form action="FrontController" method="POST">
         <input type="hidden" name="command" value="myOrders">
         <table class="table table-striped">
             <tr>
@@ -20,19 +20,39 @@
                 <th> Quantity | </th>
                 <th> Length | </th>
                 <th> Price per item | </th>
-                
+
             </tr>
             <% Order order = (Order) session.getAttribute("order");
                 if (order.getMaterials() != null) {
                     for (int i = 0; i < order.getMaterials().size(); i++) {
-                        out.print("<tr><td>" + order.getMaterials().get(i).getId() + "</td>" + "<td>" + order.getMaterials().get(i).getPname() + "</td>" + "<td>" + order.getMaterials().get(i).getAmount() + "</td>" +"<td>" + order.getMaterials().get(i).getLength() + "</td>" + "<td>" + order.getMaterials().get(i).getPrice() + "</td>" + "</tr>");
+                    if (order.getMaterials().get(i).getLength() == 0) {
+                        out.print("<tr><td>" + order.getMaterials().get(i).getId() + "</td>" + "<td>" + order.getMaterials().get(i).getPname() + "</td>" + "<td>" + order.getMaterials().get(i).getAmount() + "</td>" + "<td>" + "-" + "</td>" + "<td>" + order.getMaterials().get(i).getPrice() + "</td>" + "</tr>");
+                    } else {
+                        out.print("<tr><td>" + order.getMaterials().get(i).getId() + "</td>" + "<td>" + order.getMaterials().get(i).getPname() + "</td>" + "<td>" + order.getMaterials().get(i).getAmount() + "</td>" + "<td>" + order.getMaterials().get(i).getLength() + "</td>" + "<td>" + order.getMaterials().get(i).getPrice() + "</td>" + "</tr>");
+                    }
                     }
                 }
+            %>
+            
+            <% if(session.getAttribute("orderSkur") != null){
+                Order orderSkur = (Order) session.getAttribute("orderSkur");
+                if (orderSkur.getMaterials() != null) {
+
+                    for (int i = 0; i < orderSkur.getMaterials().size(); i++) {
+                        if (orderSkur.getMaterials().get(i).getLength() == 0) {
+                            out.print("<tr><td>" + orderSkur.getMaterials().get(i).getId() + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getPname() + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getAmount() + "</td>" + "<td>" + "-" + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getPrice() + "</td>" + "</tr>");
+
+                        } else {
+                            out.print("<tr><td>" + orderSkur.getMaterials().get(i).getId() + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getPname() + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getAmount() + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getLength() + "</td>" + "<td>" + orderSkur.getMaterials().get(i).getPrice() + "</td>" + "</tr>");
+                        }
+                    }
+                }
+            }
             %>
             </tbody>
         </table>
     </form>
-    </head>
-    <body>
-    </body>
+</head>
+<body>
+</body>
 </html>

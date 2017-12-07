@@ -1,6 +1,7 @@
 PresentationLayer\SVGPage.class
 PresentationLayer\UnknownCommand.class
 PresentationLayer\SVGUtil.class
+PresentationLayer\ViewOdetails.class
 entity\Material.class
 FunctionLayer\CarportException.class
 PresentationLayer\Calculation.class
@@ -8,6 +9,7 @@ DBAccess\OrderMapper.class
 PresentationLayer\BillOfMaterial.class
 PresentationLayer\Register.class
 entity\User.class
+PresentationLayer\UserOrders.class
 DBAccess\ProductMapper.class
 entity\Order.class
 DBAccess\Connector.class
@@ -15,5 +17,7 @@ FunctionLayer\CarportCalculator.class
 PresentationLayer\FrontController.class
 FunctionLayer\LogicFacade.class
 PresentationLayer\Command.class
+PresentationLayer\UserList.class
 DBAccess\UserMapper.class
+FunctionLayer\ShedCalculator.class
 PresentationLayer\Login.class

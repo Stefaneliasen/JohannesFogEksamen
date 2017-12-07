@@ -7,6 +7,8 @@ import entity.Order;
 import entity.User;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,26 +17,22 @@ public class Calculation extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CarportException {
-        int length = Integer.parseInt(request.getParameter("length"));
-        int width = Integer.parseInt(request.getParameter("width"));
-        int height = Integer.parseInt(request.getParameter("height"));
-        
-        ArrayList<Material> materialList = LogicFacade.createMaterialList(length, width, height);
         HttpSession session = request.getSession();
-
-        User user = (User) request.getSession().getAttribute("user");
-        Order order = new Order(user.getId(), materialList);
-        session.setAttribute("order", order);
-        try {
-            LogicFacade.createOrder(order);
-        } catch (SQLException ex) {
-            ex.getStackTrace();
-        } catch (ClassNotFoundException ex) {
-            ex.getStackTrace();
-        }
-        session.setAttribute("length", length);
-        session.setAttribute("width", width);
-        session.setAttribute("height", height);
-        return "billOfMaterial";
+        User user = (User) session.getAttribute("user");
+        int length = (int) session.getAttribute("length");
+        int width = (int) session.getAttribute("width");
+        int height = (int) session.getAttribute("height");
+        // tjek om sLength er null eller ej.
+        int sLength = (int) session.getAttribute("sLength");
+            ArrayList<Material> materialList = LogicFacade.createMaterialList(length, width, height);
+            Order order = new Order(user.getId(), materialList);
+            session.setAttribute("order", order);
+            try {
+                LogicFacade.createOrder(order);
+            } catch (SQLException | ClassNotFoundException ex) {
+                ex.getStackTrace();
+            }
+        
+            return "billOfMaterial";
     }
 }
