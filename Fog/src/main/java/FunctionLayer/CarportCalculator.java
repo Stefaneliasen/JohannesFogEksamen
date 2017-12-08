@@ -14,8 +14,6 @@ import java.util.ArrayList;
  * @author Mathias
  */
 public class CarportCalculator {
-//  MAKS BRÆDTLÆNGDE 540 CM :))
-    int maksLængdeBrædt = 540;
     ProductMapper pm = new ProductMapper();
 
     public static void main(String[] args) throws CarportException {
@@ -31,13 +29,13 @@ public class CarportCalculator {
         // Understernbrædder til for & bag ende
         // +5 da sternbrædderne rækker 2,5cm udover spærrene hver side
         int amount = width / width * 2;
-        int stk1width = width + 5;
+        int brædderwidth = width + 5;
         String pname = pm.getMaterialById(1).getPname();
         int price = pm.getMaterialById(1).getPrice();
         Material mat = new Material(pname, price);
         mat.setId(1);
         mat.setAmount(amount);
-        mat.setLength(stk1width);
+        mat.setLength(brædderwidth);
         return mat;
     }
 
