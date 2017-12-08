@@ -17,7 +17,7 @@
         <input type="hidden" name="command" value="myOrders">
         <table class="table table-striped">
             <tbody>
-            <h4>Carportens materialer</h4>
+            <h3>Carportens materialer</h3>
             <tr>
                 <th> Material id </th>
                 <th> Materialname </th>
@@ -42,7 +42,7 @@
         <table class=" table table-striped">
             <tbody>
                 <% if (session.getAttribute("orderSkur") != null) { %>
-            <h4>Skurets materialer</h4>
+            <h3>Skurets materialer</h3>
             <tr>
                 <th> Material id &nbsp; | </th>
                 <th> Materialname </th>
@@ -67,7 +67,7 @@
             </tbody>
         </table>
     </form>
-    <%= session.getAttribute("totalPrice")%>
+    <h3> Totalprice of this carport: <%= session.getAttribute("totalPrice") %> </h3> 
 </head>
 <body>
 </body>
