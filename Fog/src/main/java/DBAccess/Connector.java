@@ -8,7 +8,7 @@ public class Connector {
     
     private static final String url = "jdbc:mysql://localhost:3306/fog";
     private static final String username = "root";
-    private static final String password = "12none34";
+    private static final String password = "m4th145bj";
 
     private static Connection singleton;
 

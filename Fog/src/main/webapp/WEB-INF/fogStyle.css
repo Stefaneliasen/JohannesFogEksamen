@@ -1,1 +1,9 @@
-
+#backgroundcolor, body, head {
+    background-color: #08088A;
+}
+img{
+    height: 80%;
+}
+h3 {
+    color: orange;
+}

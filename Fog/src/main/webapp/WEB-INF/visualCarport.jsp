@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Se din carport</title>
+        <title>View of Carport</title>
     </head>
     <body>
         <svg width="75%" viewBox="0 0 <%=length * 2 + 1%> <%=width * 2 + 1%>">
