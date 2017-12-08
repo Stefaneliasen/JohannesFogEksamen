@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title>Carport Measurement</title>
     </head>
     <body>
@@ -29,7 +30,7 @@
             <input type="number" min="200" max="400" name="height" required>
             <br>
             <br>
-            <select id="skur" name="skurselector" onchange="onChanging()">
+            <select class="btn btn-primary dropdown-toggle" id="skur" name="skurselector" onchange="onChanging()">
                 <option value="uden">Uden skur</option>
                 <option value="med">Med skur</option>
             </select>
