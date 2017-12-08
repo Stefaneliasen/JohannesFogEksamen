@@ -11,15 +11,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title> Orders for customer </title>
     </head>
     <body>
         <table class="table table-striped">
             <tr>
-                <th> | Order Id| </th>
-                <th> Material name | </th>
-                <th> Quantity | </th>
-                <th> Length | </th>
-                <th> Price per item | </th>
+                <th> Order id</th>
+                <th> Material name</th>
+                <th> Quantity </th>
+                <th> Length </th>
+                <th> Price per item </th>
 
             </tr>
             <% ArrayList<Order> odetails = (ArrayList<Order>) session.getAttribute("odetails");
