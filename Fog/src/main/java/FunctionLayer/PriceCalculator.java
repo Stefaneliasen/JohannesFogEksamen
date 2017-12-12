@@ -1,6 +1,7 @@
 package FunctionLayer;
 
 import entity.Material;
+import entity.Order;
 import java.util.ArrayList;
 
 public class PriceCalculator {

@@ -29,6 +29,7 @@ public class Calculation extends Command {
         PriceCalculator priceCalc = new PriceCalculator();
         if (session.getAttribute("sLength") != null) {
             sLength = (int) session.getAttribute("sLength");
+            //Vi minuser med 300 for at gøre plads til en bil.
             ArrayList<Material> shedList = LogicFacade.shedMaterialList(sLength, width, height);
             Order orderSkur = new Order(user.getId(), shedList);
             session.setAttribute("orderSkur", orderSkur);
@@ -39,6 +40,7 @@ public class Calculation extends Command {
                 ex.getStackTrace();
             }
         }
+        
         ArrayList<Material> materialList = LogicFacade.createMaterialList(length, width, height, sLength);
         Order order = new Order(user.getId(), materialList);
         session.setAttribute("order", order);
@@ -48,6 +50,7 @@ public class Calculation extends Command {
         } catch (SQLException | ClassNotFoundException ex) {
             ex.getStackTrace();
         }
+        
         session.setAttribute("totalPrice", totalPrice);
         return "billOfMaterial";
     }
