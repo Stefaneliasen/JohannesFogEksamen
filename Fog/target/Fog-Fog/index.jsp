@@ -115,14 +115,6 @@
                 }
 
             }
-            function myFunction2() {
-                var registerDiv = document.getElementById("registerDiv");
-                var loginDiv = document.getElementById("loginDiv");
-                if (loginDiv.style.display === "" || loginDiv.style.display === "none") {
-                    registerDiv.style.display = "none";
-                    loginDiv.style.display = "block";
-                }
-            }
         </script>
 </body>
 
