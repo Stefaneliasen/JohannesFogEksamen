@@ -369,7 +369,7 @@ public class CarportCalculatorT {
     }
 
     @Test
-    public void testBræddebolt() throws Exception {
+    public void testBræddeboltAmount() throws Exception {
         System.out.println("br\u00e6ddebolt");
         int length = 1000;
         int width = 600;

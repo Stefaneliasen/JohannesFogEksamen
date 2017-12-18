@@ -56,10 +56,10 @@
             </form>
         </div>
         <script>
-            var skur = document.getElementById("skur");
-            var sLength = document.getElementById("sLength");
 
+            var sLength = document.getElementById("sLength");
             function onChanging() {
+                var skur = document.getElementById("skur");
                 var sLengthText = document.getElementById("sLengthText");
                 if (skur.value == 'med') {
                     sLength.style.display = 'block';
@@ -73,13 +73,13 @@
             function carportShedCheck() {
                 console.log("tests")
                 var length = document.getElementById("length");
-                var submitButon = document.getElementById("submitButton");
+                var submitButton = document.getElementById("submitButton");
                 console.log(length);
                 if (sLength.value >= length.value - 300) {
                     console.log("test2")
                     alert("your sLength value is to big compared to your carport length");
                     submitButton.disabled = true;
-                }else{
+                } else {
                     submitButton.disabled = false;
                 }
             }

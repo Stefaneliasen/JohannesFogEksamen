@@ -7,7 +7,6 @@ entity\Material.class
 FunctionLayer\CarportException.class
 PresentationLayer\Calculation.class
 DBAccess\OrderMapper.class
-PresentationLayer\BillOfMaterial.class
 PresentationLayer\Register.class
 entity\User.class
 PresentationLayer\UserOrders.class

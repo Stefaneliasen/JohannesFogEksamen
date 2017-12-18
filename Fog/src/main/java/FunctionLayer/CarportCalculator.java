@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @author Mathias
  */
 public class CarportCalculator {
+
     ProductMapper pm = new ProductMapper();
 
     public static void main(String[] args) throws CarportException {
@@ -110,16 +111,16 @@ public class CarportCalculator {
         int stklength = height + 90;
         mat.setId(6);
         mat.setLength(stklength);
-        int amount = (int) Math.ceil((length - 130) / 310) * 2;
         if (length < 430) {
             mat.setAmount(4);
         } else {
+            int amount = (int) Math.ceil((length - 130) / 310) * 2;
             mat.setAmount(4 + amount);
         }
         // Hvis der er skur på, mangler der nu 2 stolper til midten.
         if (sLength > 0) {
-            double amountShed = Math.ceil((double) sLength / 310)*2;
-            double amount2 = Math.round((length - 139.5 - sLength) / 310)*2;
+            double amountShed = Math.ceil((double) sLength / 310) * 2;
+            double amount2 = Math.round((length - 139.5 - sLength) / 310) * 2;
             //Der er altid minimum 4 stolper, så derfor pluser vi med 4 til sidst.
             mat.setAmount((int) amount2 + (int) amountShed + 6);
         }
@@ -286,7 +287,7 @@ public class CarportCalculator {
         return mat;
     }
 
-    public Material firkantskiver(int length, int width, int height, int sLength) throws CarportException {
+    Material firkantskiver(int length, int width, int height, int sLength) throws CarportException {
         // "firkantskiver 40x40x11mm"
         String pname = pm.getMaterialById(15).getPname();
         int price = pm.getMaterialById(15).getPrice();

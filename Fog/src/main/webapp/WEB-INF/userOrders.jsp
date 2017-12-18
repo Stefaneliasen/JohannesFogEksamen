@@ -18,7 +18,6 @@
                 if (orders != null) {
                     for (int i = 0; i < orders.size(); i++) {
                         out.print("<li><a href='FrontController?orderid=" + orders.get(i).getId() +"&command=odetails'>"+ orders.get(i).getId() + session.getAttribute("totalpris") +"</a></li>");
-                        
                     }
                 }
             %>
