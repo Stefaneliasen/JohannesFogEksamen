@@ -23,10 +23,11 @@ public class ViewOdetails extends Command {
         ArrayList<Order> odetails = LogicFacade.viewOdetails(orderId);
         HttpSession session = request.getSession();
         PriceCalculator priceCalc = new PriceCalculator();
-        for (int i = 0; i < odetails.size(); i++) {
-        priceCalc.totalOrderPrice(odetails.get(i).getMaterials());
-        }
-        session.setAttribute( "odetails", odetails );
+        double totalPrice = 0;
+//        for (int i = 0; i < odetails.size(); i++) {
+//        totalPrice += priceCalc.totalOrderPriceOrder(odetails);
+        session.setAttribute( "odetails", odetails);
+        session.setAttribute ("totalprice1", totalPrice);
         return "showOrders";
     }
 

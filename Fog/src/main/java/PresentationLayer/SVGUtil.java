@@ -32,38 +32,43 @@ public class SVGUtil {
             res += "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + 27.5 + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
             res += "<rect x=\"" + (length - 30 - sLength) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
             // poles to support shed if needed
-            double amount = Math.ceil((double) sLength/310);
+            double amount = Math.ceil((double) sLength / 310);
             System.out.println("sLength " + sLength);
             System.out.println("amount " + amount);
-            double xPos = sLength / amount;
-            System.out.println("xPos " + xPos);
-            int currentPos = length - 30 - sLength;
-            for (int i = 0; i < amount; i++) {
-                res += "<rect x=\"" + (currentPos + xPos) + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-                res2 += "<rect x=\"" + (currentPos + xPos) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-                xPos += xPos;
-                System.out.println("x" + xPos);
+            double x = length - 30 - sLength;
+            double xPos = (sLength / (amount + 1)) + x;
+            //Der skal kun være ekstra stolper i skuret, hvis sLength er længere end 400.
+            if (sLength > 400) {
+                for (int i = 0; i <= amount; i++) {
+                    res += "<rect x=\"" + xPos + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+                    res2 += "<rect x=\"" + xPos + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+                    System.out.println("x" + xPos);
+                    xPos += (sLength / (amount + 1));
+                    System.out.println("i " + i);
+                }
             }
             //poles to support rest of the carport
-            double amount2 = Math.ceil((length-139.5-sLength)/310);
-            double xPos2 = ((length-139.5-sLength)/amount);
+            double amount2 = Math.round((length - 139.5 - sLength) / 310);
+            System.out.println("amount2 " + amount2);
             int currentPos2 = 100;
-            for (int i = 1; i < amount2; i++) {
-                res += "<rect x=\"" + (currentPos2 + xPos2) + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-                res2 += "<rect x=\"" + (currentPos2 + xPos2) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-                xPos2 += xPos2;
+            double xPos2 = ((length - 139.5 - sLength) / (amount2 + 1)) + currentPos2;
+            if (length - 30 - sLength > 400) {
+                for (int i = 0; i < amount2; i++) {
+                    res += "<rect x=\"" + xPos2 + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+                    res2 += "<rect x=\"" + xPos2 + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+                    xPos2 += (length - 139.5 - sLength) / (amount2 + 1);
+                    System.out.println("x2" + xPos2);
+                }
             }
         } else {
             //FORKLAR 139.5
             double amount = Math.ceil((length - 139.5) / 310);
-            double xPos = (length - 139.5) / amount;
             double currentPos = 100;
-            if (length >= 440) {
-                for (int i = 1; i < amount; i++) {
-                    res += "<rect x=\"" + (currentPos + xPos) + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-                    res2 += "<rect x=\"" + (currentPos + xPos) + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
-                    xPos += xPos;
-                }
+            double xPos = (length - 139.5) / (amount+1) + currentPos;
+            for (int i = 0; i < amount; i++) {
+                res += "<rect x=\"" +  xPos + "\" y=\"27.5\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+                res2 += "<rect x=\"" +  xPos + "\" y=\"" + (width - 3) + "\" height=\"9.5\" width=\"9.5\" style=\"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
+                xPos += (length - 139.5) / (amount+1);
             }
         }
         return res + res2;
@@ -95,10 +100,10 @@ public class SVGUtil {
     }
 
     public static String svgSkur(int length, int width, int height, int sLength) {
-       String skur = "";
-        if(sLength > 0){
-        skur = "<rect x=\"" + ((length - 30) - sLength) + "\" y=\"30\" height=\"" + (width - 25) + "\" width=\"" + (sLength + 9.5) + "\" style=\"stroke:rgb(255,255,255);fill:none;stroke-width:2;stroke:rgb(0,0,0);stroke-dasharray: 10 5;\" />";
-       }
+        String skur = "";
+        if (sLength > 0) {
+            skur = "<rect x=\"" + ((length - 30) - sLength) + "\" y=\"30\" height=\"" + (width - 25) + "\" width=\"" + (sLength + 9.5) + "\" style=\"stroke:rgb(255,255,255);fill:none;stroke-width:2;stroke:rgb(0,0,0);stroke-dasharray: 10 5;\" />";
+        }
         return skur;
     }
 

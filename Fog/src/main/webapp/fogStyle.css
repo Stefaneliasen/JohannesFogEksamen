@@ -1,0 +1,36 @@
+body, head {
+    background-color: #124A86;
+}
+
+h3{
+    color: #124A86;
+    position: relative;
+    margin-left: 1vw;
+}
+label{
+    color: #124A86;
+    position: relative;
+    margin-left: 0px;
+}
+
+.divopacity {
+    background-color: #F8F8F8;
+    margin: 32vw;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 35vw;
+    display: inline-block;
+    border-radius: 35px;
+}
+.navigation{
+    margin: 7.5vw;
+}
+img{
+    display: inline-block;
+}
+#registerDiv{
+    display: none;
+}
+.formnavigation{
+    margin: 1vw;
+}
