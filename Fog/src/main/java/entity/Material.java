@@ -8,42 +8,6 @@ public class Material {
     private String pname;
     private int price;
     private int amount;
-   
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Material other = (Material) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        if (this.price != other.price) {
-            return false;
-        }
-        if (this.amount != other.amount) {
-            return false;
-        }
-        if (this.length != other.length) {
-            return false;
-        }
-        if (!Objects.equals(this.pname, other.pname)) {
-            return false;
-        }
-        return true;
-    }
     private int length;
 
     public Material(String pname, int price) {

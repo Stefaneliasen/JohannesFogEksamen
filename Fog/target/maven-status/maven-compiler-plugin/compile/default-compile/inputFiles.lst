@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\PriceCalculator.java
 C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\src\main\java\DBAccess\Connector.java
 C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\src\main\java\DBAccess\ProductMapper.java
@@ -22,29 +21,3 @@ C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\s
 C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\LogicFacade.java
 C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\CarportException.java
 C:\Users\Arne\Documents\NetBeansProjects\EksamenProjekt\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\UserOrders.java
-=======
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\DBAccess\Connector.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\Register.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\Calculation.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\CarportCalculator.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\FrontController.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\SVGUtil.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\ViewOdetails.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\DBAccess\UserMapper.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\ShedCalculator.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\Login.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\DBAccess\OrderMapper.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\LogicFacade.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\CarportException.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\DBAccess\ProductMapper.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\UnknownCommand.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\entity\Material.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\entity\User.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\entity\Order.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\Command.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\UserOrders.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\SVGPage.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\BillOfMaterial.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\FunctionLayer\PriceCalculator.java
-C:\Users\Mathias BJ\Documents\NetBeansProjects\JohannesFog\JohannesFogEksamen\Fog\src\main\java\PresentationLayer\UserList.java
->>>>>>> SVGStolper
