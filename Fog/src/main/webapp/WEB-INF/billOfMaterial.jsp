@@ -67,7 +67,7 @@
             </tbody>
         </table>
     </form>
-    <h3> Totalprice of this carport: <%= session.getAttribute("totalPrice") %> </h3> 
+    <h3> Totalprice of this carport: <%= session.getAttribute("totalPric e") %> </h3> 
 </head>
 <body>
 </body>

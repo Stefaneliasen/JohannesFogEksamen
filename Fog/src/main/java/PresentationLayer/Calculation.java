@@ -25,11 +25,9 @@ public class Calculation extends Command {
         int height = (int) session.getAttribute("height");
         int sLength = 0;
         double totalPrice = 0;
-        // tjek om sLength er null eller ej.
         PriceCalculator priceCalc = new PriceCalculator();
         if (session.getAttribute("sLength") != null) {
             sLength = (int) session.getAttribute("sLength");
-            //Vi minuser med 300 for at gøre plads til en bil.
             ArrayList<Material> shedList = LogicFacade.shedMaterialList(sLength, width, height);
             Order orderSkur = new Order(user.getId(), shedList);
             session.setAttribute("orderSkur", orderSkur);

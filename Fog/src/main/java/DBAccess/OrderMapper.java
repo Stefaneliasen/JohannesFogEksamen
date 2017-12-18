@@ -20,7 +20,6 @@ public class OrderMapper {
         materials.add(material);
         Order order = new Order(1, materials);
         om.addOrder(order);
-
     }
 
     public int addOrder(Order order) throws SQLException, ClassNotFoundException, CarportException {

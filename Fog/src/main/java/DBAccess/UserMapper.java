@@ -8,11 +8,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserMapper {
 
-    public static void main(String[] args) throws CarportException {
+private static final Logger LOGGER = Logger.getLogger( UserMapper.class.getName() );
+private static final Handler handler = new ConsoleHandler();
 
+    public static void main(String[] args) throws CarportException {
+        
         for (int i = 0; i < 1; i++) {
             System.out.println(getUser().get(i).getId());
             System.out.println(getUser().get(i).getEmail());
@@ -39,6 +46,9 @@ public class UserMapper {
     }
 
     public static User login(String email, String password) throws CarportException {
+    LOGGER.addHandler(handler);
+    handler.setLevel(Level.WARNING);
+    LOGGER.setLevel(Level.WARNING);
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id, role FROM user "
@@ -58,6 +68,8 @@ public class UserMapper {
                 //Simpel logger på userlogin
             }
         } catch (ClassNotFoundException | SQLException ex) {
+            LOGGER.log( Level.SEVERE, ex.toString(), ex);
+            
             throw new CarportException(ex.getMessage());
         }
     }

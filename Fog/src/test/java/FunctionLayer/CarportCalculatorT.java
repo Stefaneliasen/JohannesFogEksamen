@@ -60,7 +60,7 @@ public class CarportCalculatorT {
             int width = 400;
             int height = 200;
             CarportCalculator instance = new CarportCalculator();
-            int expResult = 4;
+            int expResult = 2;
             int result = instance.brædderForOgBag(length, width, height).getAmount();
             assertEquals(expResult, result);
         }
@@ -101,7 +101,7 @@ public class CarportCalculatorT {
         int width = 400;
         int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        int expResult = 2;
+        int expResult = 1;
         int result = instance.oversternBrædderForenden(length, width, height).getAmount();
         assertEquals(expResult, result);
     }
@@ -126,7 +126,7 @@ public class CarportCalculatorT {
         int width = 400;
         int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        int expResult = 4;
+        int expResult = 2;
         int result = instance.oversternBrædderSiderne(length, width, height).getAmount();
         assertEquals(expResult, result);
     }
@@ -199,21 +199,28 @@ public class CarportCalculatorT {
     @Test
     public void testStolper() throws Exception {
         System.out.println("stolper");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         int sLength = 0;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.stolper(length, width, height, sLength);
+        int expResult = 8;
+        int result = instance.stolper(length, width, height, sLength).getAmount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of vandbrætSide method, of class CarportCalculator.
-     */
+    @Test
+    public void testStolperMedSkur() throws Exception {
+        System.out.println("stolper");
+        int length = 1000;
+        int width = 600;
+        int height = 200;
+        int sLength = 400;
+        CarportCalculator instance = new CarportCalculator();
+        int expResult = 12;
+        int result = instance.stolper(length, width, height, sLength).getAmount();
+        assertEquals(expResult, result);
+    }
     @Test
     public void testVandbrætSideAmount() throws Exception {
         System.out.println("vandbr\u00e6tSide");
@@ -269,188 +276,122 @@ public class CarportCalculatorT {
     @Test
     public void testTagPladeStor() throws Exception {
         System.out.println("tagPladeStor");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.tagPladeStor(length, width, height);
+        int expResult = 6;
+        int result = instance.tagPladeStor(length, width, height).getAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of tagPladeLille method, of class CarportCalculator.
-     */
     @Test
     public void testTagPladeLille() throws Exception {
         System.out.println("tagPladeLille");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 500;
+        int width = 300;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.tagPladeLille(length, width, height);
+        int expResult = 3;
+        int result = instance.tagPladeLille(length, width, height).getAmount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of tagPladeSkruer method, of class CarportCalculator.
-     */
     @Test
     public void testTagPladeSkruer() throws Exception {
         System.out.println("tagPladeSkruer");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.tagPladeSkruer(length, width, height);
+        int expResult = 4;
+        int result = instance.tagPladeSkruer(length, width, height).getAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of hulbaand method, of class CarportCalculator.
-     */
     @Test
     public void testHulbaand() throws Exception {
         System.out.println("hulbaand");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.hulbaand(length, width, height);
+        int expResult = 3;
+        int result = instance.hulbaand(length, width, height).getAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of universalBeslagHøjre method, of class CarportCalculator.
-     */
     @Test
     public void testUniversalBeslagHøjre() throws Exception {
         System.out.println("universalBeslagH\u00f8jre");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.universalBeslagHøjre(length, width, height);
+        int expResult = 18;
+        int result = instance.universalBeslagHøjre(length, width, height).getAmount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of universalBeslagVenstre method, of class CarportCalculator.
-     */
     @Test
     public void testUniversalBeslagVenstre() throws Exception {
         System.out.println("universalBeslagVenstre");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.universalBeslagVenstre(length, width, height);
+        int expResult = 18;
+        int result = instance.universalBeslagVenstre(length, width, height).getAmount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of skruerSternOgVandbræt method, of class CarportCalculator.
-     */
     @Test
     public void testSkruerSternOgVandbræt() throws Exception {
         System.out.println("skruerSternOgVandbr\u00e6t");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.skruerSternOgVandbræt(length, width, height);
+        int expResult = 1;
+        int result = instance.skruerSternOgVandbræt(length, width, height).getAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of universalOgHulbaandSkruer method, of class CarportCalculator.
-     */
     @Test
     public void testUniversalOgHulbaandSkruer() throws Exception {
         System.out.println("universalOgHulbaandSkruer");
-        int length = 0;
-        int width = 0;
-        int height = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.universalOgHulbaandSkruer(length, width, height);
+        int expResult = 3;
+        int result = instance.universalOgHulbaandSkruer(length, width, height).getAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of bræddebolt method, of class CarportCalculator.
-     */
     @Test
-    public void testBræddebolt() throws Exception {
+    public void testBræddeboltAmount() throws Exception {
         System.out.println("br\u00e6ddebolt");
-        int length = 0;
-        int width = 0;
-        int height = 0;
-        int sLength = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
+        int sLength = 500;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.bræddebolt(length, width, height, sLength);
+        int expResult = 24;
+        int result = instance.bræddebolt(length, width, height, sLength).getAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of firkantskiver method, of class CarportCalculator.
-     */
     @Test
     public void testFirkantskiver() throws Exception {
         System.out.println("firkantskiver");
-        int length = 0;
-        int width = 0;
-        int height = 0;
-        int sLength = 0;
+        int length = 1000;
+        int width = 600;
+        int height = 200;
+        int sLength = 500;
         CarportCalculator instance = new CarportCalculator();
-        Material expResult = null;
-        Material result = instance.firkantskiver(length, width, height, sLength);
+        int expResult = 24;
+        int result = instance.firkantskiver(length, width, height, sLength).getAmount();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of flatRoofMaterial method, of class CarportCalculator.
-     */
-    @Test
-    public void testFlatRoofMaterial() throws Exception {
-        System.out.println("flatRoofMaterial");
-        int length = 0;
-        int width = 0;
-        int height = 0;
-        int sLength = 0;
-        CarportCalculator instance = new CarportCalculator();
-        ArrayList<Material> expResult = null;
-        ArrayList<Material> result = instance.flatRoofMaterial(length, width, height, sLength);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
 }
