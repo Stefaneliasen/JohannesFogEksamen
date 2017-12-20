@@ -24,7 +24,6 @@
                         if (orders != null) {
                             for (int i = 0; i < orders.size(); i++) {
                                 out.print("<li class=\"list-group-item\"><a href='FrontController?orderid=" + orders.get(i).getId() + "&command=odetails'>" + orders.get(i).getId() + "</a></li>");
-
                             }
                         }
                     %>
